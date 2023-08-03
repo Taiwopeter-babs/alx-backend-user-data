@@ -87,7 +87,6 @@ def get_db() -> MySQLConnection:
 
 def main() -> None:
     """main entry"""
-    resulting_data = []
     db = get_db()
     logger = get_logger()
 
