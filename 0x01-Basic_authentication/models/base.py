@@ -9,7 +9,7 @@ import uuid
 
 
 TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S"
-DATA: Dict[str, Dict[str, Any]] = {}
+DATA = {}
 
 
 class Base():
