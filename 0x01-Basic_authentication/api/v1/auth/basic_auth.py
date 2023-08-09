@@ -96,7 +96,7 @@ class BasicAuth(Auth):
 
         if User.count() == 0:
             return None
-
+        # search returns a list of instance objects
         _objs = User.search({"email": user_email})
         if len(_objs) == 0:
             return None
