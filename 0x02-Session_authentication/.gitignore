@@ -1,0 +1,10 @@
+.mypy*
+.vscode/
+*.json
+__pycache__/
+api/__pycache__/
+api/v1/__pycache__
+api/v1/auth/__pycache__
+models/__pycache__/
+main*
+.DS_Store
