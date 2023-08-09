@@ -2,7 +2,7 @@
 """
 Authentication module
 """
-from flask import request, Request
+from flask import request
 import re
 from typing import List, TypeVar, Union
 
@@ -39,7 +39,7 @@ class Auth:
         return True
 
     def authorization_header(self,
-                             request: Union[Request, None] = None
+                             request = None
                              ) -> Union[str, None]:
         """
         returns authorization header value
@@ -52,7 +52,7 @@ class Auth:
         return request.headers.get('Authorization')
 
     def current_user(self,
-                     request: Union[Request, None] = None
+                     request = None
                      ) -> Union[None, TypeVar('User')]:
         """
         Returns a current user

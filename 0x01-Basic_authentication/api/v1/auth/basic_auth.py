@@ -5,7 +5,6 @@ Basic Access Authentication module
 from api.v1.auth.auth import Auth
 import base64
 import binascii
-from flask import Request, Response
 from typing import Tuple, TypeVar, Union
 
 
@@ -110,7 +109,7 @@ class BasicAuth(Auth):
         return user_obj
 
     def current_user(self,
-                     request: Union[Request, None] = None
+                     request=None
                      ) -> Union[None, TypeVar('User')]:
         """
         Returns a current user of object `User`
