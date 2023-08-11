@@ -2,13 +2,13 @@
 """ Module of Users views
 """
 from api.v1.views import app_views
-from flask import abort, jsonify, request, Response
+from flask import abort, jsonify, request
 from models.user import User
 from typing import Tuple, Union
 
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
-def view_all_users() -> Response:
+def view_all_users() -> str:
     """ GET /api/v1/users
     Return:
       - list of all User objects JSON represented
@@ -18,7 +18,7 @@ def view_all_users() -> Response:
 
 
 @app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
-def view_one_user(user_id: Union[str, None] = None) -> Response:
+def view_one_user(user_id: Union[str, None] = None) -> str:
     """ GET /api/v1/users/:id
     Path parameter:
       - User ID
@@ -44,7 +44,7 @@ def view_one_user(user_id: Union[str, None] = None) -> Response:
 
 
 @app_views.route('/users/<user_id>', methods=['DELETE'], strict_slashes=False)
-def delete_user(user_id: Union[str, None] = None) -> Tuple[Response, int]:
+def delete_user(user_id: Union[str, None] = None) -> Tuple[str, int]:
     """ DELETE /api/v1/users/:id
     Path parameter:
       - User ID
@@ -62,7 +62,7 @@ def delete_user(user_id: Union[str, None] = None) -> Tuple[Response, int]:
 
 
 @app_views.route('/users', methods=['POST'], strict_slashes=False)
-def create_user() -> Tuple[Response, int]:
+def create_user() -> Tuple[str, int]:
     """ POST /api/v1/users/
     JSON body:
       - email
@@ -100,7 +100,7 @@ def create_user() -> Tuple[Response, int]:
 
 
 @app_views.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
-def update_user(user_id: Union[str, None] = None) -> Tuple[Response, int]:
+def update_user(user_id: Union[str, None] = None) -> Tuple[str, int]:
     """ PUT /api/v1/users/:id
     Path parameter:
       - User ID
