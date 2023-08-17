@@ -40,7 +40,7 @@ def users() -> str:
         return jsonify({"message": "email already registered"}), 400
 
     return jsonify({
-        "email": "{}".format(user.email),
+        "email": user.email,
         "message": "user created"
     })
 
